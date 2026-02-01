@@ -1,3 +1,42 @@
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    /* 1. Hide the fixed sidebars (Socials and Email) to save space */
+    .fixed-email, .fixed-socials {
+        display: none;
+    }
+
+    /* 2. Make the main content take up the full width */
+    main.content {
+        padding: 0 20px;
+        margin: 0;
+    }
+
+    /* 3. Stack Project Cards and About sections */
+    section {
+        padding: 60px 0;
+    }
+
+    .about-wrapper, .discipline-content {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    /* 4. Make screenshots take up more width on small screens */
+    .browser-mockup {
+        max-width: 100%;
+        margin: 20px 0;
+    }
+
+    /* 5. Adjust the Hero/Intro text size so it doesn't overflow */
+    .hero-h1 {
+        font-size: 40px;
+    }
+
+    /* 6. Adjust the Skill tags grid */
+    .skills-list {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+}
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -446,3 +485,4 @@ section h3 { text-transform: uppercase; letter-spacing: 3px; font-size: 14px; co
     box-shadow: 0 0 15px rgba(94, 234, 212, 0.3); /* The glow effect */
     transform: translateY(-3px);
 }
+
