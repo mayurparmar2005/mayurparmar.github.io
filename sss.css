@@ -1,0 +1,334 @@
+:root {
+    --bg: #0f172a;
+    --text: #94a3b8;
+    --highlight: #e2e8f0;
+    --accent: #5eead4; /* That famous teal color */
+}
+
+/* 1. FIXED SOCIALS (Vertical line on the left) */
+.fixed-socials {
+    position: fixed;
+    bottom: 0;
+    left: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    z-index: 100;
+}
+
+.fixed-socials a {
+    writing-mode: vertical-rl;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 12px;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.fixed-socials a:hover {
+    color: var(--accent);
+    transform: translateY(-5px);
+}
+
+.social-line {
+    width: 1px;
+    height: 90px;
+    background-color: var(--text);
+}
+/* 2. HERO HEADER (The big intro) */
+.hero-header {
+    height: 80vh; /* Adjust height to your liking */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.big-name {
+    font-size: clamp(40px, 8vw, 80px) !important;
+    color: var(--highlight);
+    line-height: 1.1;
+}
+
+.big-sub {
+    font-size: clamp(30px, 5vw, 50px) !important;
+    color: var(--text);
+    opacity: 0.7;
+}
+
+.teal-text {
+    color: var(--accent);
+    font-family: monospace;
+    margin-bottom: 10px;
+}
+/* 3. SPACING BETWEEN SECTIONS */
+section {
+    padding-top: 100px;
+    margin-bottom: 150px; /* Large space between sections */
+}
+
+section h3 {
+    color: var(--highlight);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    margin-bottom: 40px;
+    display: block; /* Ensures it doesn't overlap */
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.25rem;
+    color: #e2e8f0;
+    margin-top: 10px;
+}
+
+/* 4. Link Styling */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+.nav {
+    margin-top: 50px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-bottom: 20px;
+    color: #94a3b8; /* Muted gray */
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+.nav-indicator {
+    width: 30px;
+    height: 1px;
+    background-color: #64748b;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+}
+
+.nav-line {
+    width: 30px;
+    height: 1px;
+    background-color: #64748b;
+    margin-right: 15px;
+    transition: width 0.3s, background-color 0.3s;
+}
+
+.nav-link:hover .nav-indicator,
+.nav-link.active .nav-indicator {
+    width: 60px;
+    background-color: #5eead4; /* Teal */
+}
+
+.nav-link:hover .nav-text,
+.nav-link.active .nav-text {
+    color: #5eead4;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10%; /* More side padding */
+}
+
+.content {
+    width: 55%; /* Reduced slightly to prevent overlap */
+}
+
+.sidebar {
+    position: sticky;
+    top: 0;
+    width: 40%;
+    height: 100vh;
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.project-card {
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.project-card:hover {
+    background: rgba(94, 234, 212, 0.05); /* Very subtle teal tint */
+    border: 1px solid rgba(94, 234, 212, 0.1);
+    transform: translateY(-5px); /* Lift effect */
+}
+
+.project-card:hover h3 {
+    color: var(--accent); /* Title turns teal on hover */
+}
+
+#inverted-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    filter: none;
+    border-radius: 50%;
+    pointer-events: none; /* Crucial so you can still click things */
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.1s ease-out; /* Adds a tiny bit of smooth "weight" */
+}
+
+/* Optional: Make the cursor hide when leaving the window */
+body:hover #inverted-cursor {
+    opacity: 1;
+}
+
+.tags {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.tags span {
+    background: rgba(94, 234, 212, 0.1);
+    color: var(--accent);
+    padding: 4px 12px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Container for the whole section */
+#experience {
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 20px;
+    margin-left: 10px;
+}
+
+/* The Vertical Line */
+#experience::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    background: rgba(94, 234, 212, 0.2); /* Faint teal line */
+}
+
+.milestone {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.milestone:hover {
+    background: rgba(255, 255, 255, 0.03); /* Subtle hover for the whole block */
+}
+
+.milestone::before {
+    content: '';
+    position: absolute;
+    left: -26px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #5eead4; /* Teal dot */
+}
+
+/* Hover effect for the timeline */
+.milestone:hover::before {
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+}
+
+.date {
+    font-size: 12px;
+    color: var(--text-secondary);
+    min-width: 100px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.milestone-content h3 {
+    margin: 0;
+    font-size: 16px;
+    color: var(--highlight);
+}
+
+.milestone-content p {
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+#skills h3 {
+    margin-top: 40px;
+    color: var(--highlight);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.skill-group h4 {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin: 15px 0 8px 0;
+}
+
+.status-indicator {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--accent);
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(94, 234, 212, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(94, 234, 212, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(94, 234, 212, 0); }
+}
+
