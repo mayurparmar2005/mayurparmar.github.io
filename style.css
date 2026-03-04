@@ -492,3 +492,70 @@ section h3 { text-transform: uppercase; letter-spacing: 3px; font-size: 14px; co
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(94, 234, 212, 0.4); /* Glow effect */
 }
+
+/* =========================================
+   📱 MOBILE RESPONSIVE LAYOUT
+   ========================================= */
+@media screen and (max-width: 960px) {
+    /* 1. Stack the layout vertically */
+    .container {
+        flex-direction: column;
+        padding: 0 25px; /* Smaller side margins for phones */
+        gap: 20px;
+    }
+
+    /* 2. Sidebar goes to the top instead of staying fixed */
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 60px 0 20px 0;
+    }
+
+    /* 3. Main content takes full width */
+    .content {
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    /* 4. Hide desktop-only elements that crowd a phone screen */
+    .fixed-socials, 
+    .fixed-email, 
+    #inverted-cursor {
+        display: none !important;
+    }
+
+    /* 5. Adjust text sizes for smaller screens */
+    .big-name { 
+        font-size: 3rem !important; 
+    }
+    .big-sub { 
+        font-size: 2rem !important; 
+    }
+    
+    section { 
+        padding: 60px 0; 
+        margin-bottom: 40px; 
+        min-height: auto;
+    }
+
+    /* 6. Fix project cards to fit the screen */
+    .browser-mockup {
+        max-width: 100%;
+    }
+    
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    /* 7. Fix the experience timeline alignment */
+    #experience {
+        padding-left: 20px;
+    }
+    .milestone::before {
+        left: -26px;
+    }
+}
+
