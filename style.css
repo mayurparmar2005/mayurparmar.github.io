@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* ============================================================
        THEME VARIABLES
     ============================================================ */
@@ -1211,7 +1210,7 @@
       #experience { padding-left: 22px; }
       .milestone::before { left: -28px; }
     }
-=======
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -1773,4 +1772,3 @@ section h3 { text-transform: uppercase; letter-spacing: 3px; font-size: 14px; co
     }
 }
 
->>>>>>> 949906205a44ef46ee6ffcd6d92a1ec0bcc7ab24
